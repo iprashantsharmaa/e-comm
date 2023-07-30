@@ -18,9 +18,15 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "baseUrl": "src",
+    "paths": {
+      "@/*": ["./pages/Dashboard/*"],
+    }
   },
   "include": [
-    "src"
+    "src",
+    "node_modules/@types/loadable__component/index.d.ts",
+    "@swyftx/api-crypto-address-validator",
   ]
 }

@@ -1,13 +1,30 @@
-body {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.muiSelect.Mui-focused {
+  @apply border-gray-200;
+}
+
+.muiSelect > .MuiSelect-select.MuiOutlinedInput-input {
+  @apply text-sm py-2.5 capitalize text-white !important;
+}
+
+.muiSelect.disabled > .MuiSelect-select.MuiOutlinedInput-input {
+  @apply bg-gray-100;
+}
+
+.muiSelect > .MuiSelect-icon {
+  @apply text-white;
+}
+
+.muiSelect > fieldset {
+  @apply border-none;
 }
