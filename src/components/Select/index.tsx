@@ -17,6 +17,7 @@ type Props = {
 };
 export default function Select({
   id,
+  className,
   name,
   label,
   defaultValue,
@@ -25,7 +26,7 @@ export default function Select({
   onChange,
   disabled,
 }: Props) {
-  const selectClasses = clsx('muiSelect rounded-md bg-gray-800 !w-1/5');
+  const selectClasses = clsx('muiSelect rounded-md bg-gray-800 w-1/5', className);
   const handleChange = (e: SelectChangeEvent) => {
     const { target: { value } } = e;
     onChange(value);

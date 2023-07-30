@@ -30,7 +30,7 @@ export default function Header({
   onSearchChange,
 }: Props) {
   const actionsClasses = clsx(
-    'top-[10%] left-1/2 -translate-x-1/2 flex items-center w-1/2 space-x-6 absolute flex-',
+    'top-[10%] flex flex-col space-y-4 absolute md:space-y-0 w-4/5 md:w-1/2 md:flex-row md:space-x-6 md:left-1/2 md:-translate-x-1/2',
   );
   const {
     data: categories = [],
@@ -38,7 +38,7 @@ export default function Header({
   } = useGetAllCategories();
 
   return (
-    <div className="h-3/5">
+    <div className="flex justify-center h-3/5">
       <div className="z-50 fixed bg-slate-900 w-full py-2">
         <div className="flex justify-center space-x-6 items-center animate-marquee w-full overflow-hidden">
           {Links.map((link) => (
@@ -65,21 +65,26 @@ export default function Header({
             <SearchIcon />
           </IconButton>
         </div>
-        <Select
-          onChange={onCategoryChange}
-          options={['All categories', ...categories]}
-          value={category}
-          disabled={isLoading}
-        />
-        <IconButton className="!bg-gray-800 w-10 h-10">
-          <ShoppingCartIcon
-            fontSize="small"
-            className="text-white"
+        <div className="flex-1 flex items-center justify-between space-x-6 md:justify-start">
+          <Select
+            className="!w-1/2"
+            onChange={onCategoryChange}
+            options={['All categories', ...categories]}
+            value={category}
+            disabled={isLoading}
           />
-        </IconButton>
-        <IconButton className="!bg-gray-800">
-          <PersonIcon className="text-white" />
-        </IconButton>
+          <div className="flex items-center space-x-6">
+            <IconButton className="!bg-gray-800 w-10 h-10">
+              <ShoppingCartIcon
+                fontSize="small"
+                className="text-white"
+              />
+            </IconButton>
+            <IconButton className="!bg-gray-800">
+              <PersonIcon className="text-white" />
+            </IconButton>
+          </div>
+        </div>
       </div>
     </div>
   );

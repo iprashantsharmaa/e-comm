@@ -31,7 +31,7 @@ export default function Products({
       {!isLoading && !products.length && (
         <p className="text-base font-semibold text-center">No Products Found</p>
       )}
-      <div className="px-32 grid justify-items-center content-center grid-cols-1 gap-6 md:grid-cols-2 sm:grid-cols-1 lg:grid-cols-3 2xl:grid-cols-4">
+      <div className="md:px-32 grid justify-items-center content-center grid-cols-1 gap-6 md:grid-cols-2 sm:grid-cols-1 lg:grid-cols-3 2xl:grid-cols-4">
         {isLoading && (
           <LoadingSkeleton />
         )}
